@@ -10,7 +10,12 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        // Jika admin, tampilkan semua. Jika user biasa, hanya miliknya sendiri.
+        if (auth()->user()->isAdmin()) {
+            $products = Product::all();
+        } else {
+            $products = Product::where('user_id', auth()->id())->get();
+        }
 
         return view('product.index', compact('products'));
     }

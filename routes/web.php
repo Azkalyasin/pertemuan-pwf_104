@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -25,8 +25,8 @@ Route::middleware('auth')->group(function () {
     // Product CRUD
     Route::resource('product', ProductController::class);
 
-    // Kategori CRUD (Admin Only)
-    Route::resource('kategori', KategoriController::class)->middleware('can:manage-product');
+    // Category CRUD (Admin Only)
+    Route::resource('category', App\Http\Controllers\CategoryController::class)->middleware('can:manage-category');
 });
 
 require __DIR__.'/auth.php';

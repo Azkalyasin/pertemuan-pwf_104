@@ -44,24 +44,13 @@
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 text-sm">
                             <thead class="bg-gray-50 dark:bg-gray-800">
                                 <tr>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider w-8">
-                                        #</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Name</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Quantity</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Price</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Owner</th>
-                                    <th
-                                        class="px-6 py-3 text-center text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Actions</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider w-8">#</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Name</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Category</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Quantity</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Price</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Owner</th>
+                                    <th class="px-6 py-3 text-center text-xs font-semibold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Actions</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
@@ -74,11 +63,12 @@
                                             {{ $product->name }}
                                         </td>
                                         <td class="px-6 py-4 text-gray-600 dark:text-gray-300">
-                                            <span
-                                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
-                                            {{ $product->qty > 10 ? 'bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300' : 'bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300' }}">
-                                                {{ $product->qty }}
+                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300">
+                                                {{ $product->category->name ?? '-' }}
                                             </span>
+                                        </td>
+                                        <td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                                            {{ $product->quantity }}
                                         </td>
                                         <td class="px-6 py-4 text-gray-700 dark:text-gray-300 font-mono">
                                             Rp {{ number_format($product->price, 0, ',', '.') }}
@@ -135,7 +125,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="6"
+                                        <td colspan="7"
                                             class="px-6 py-12 text-center text-gray-400 dark:text-gray-500">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="h-10 w-10 mx-auto mb-3 opacity-40" fill="none"

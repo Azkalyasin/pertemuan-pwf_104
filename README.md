@@ -45,6 +45,10 @@ read
 
 <img width="1082" height="880" alt="image" src="https://github.com/user-attachments/assets/027f525b-121b-4fa8-a5e4-f46ef5eec448" />
 
+peretemuan 7
+<img width="1918" height="927" alt="image" src="https://github.com/user-attachments/assets/76240eb3-5ea5-48dc-9946-30bd30f97ee1" />
+
+
 
 
 
